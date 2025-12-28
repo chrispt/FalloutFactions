@@ -15,6 +15,7 @@ function renderFactions() {
     factionsGrid.innerHTML = factions.map(faction => `
         <article class="faction-card" data-faction-id="${faction.id}" tabindex="0" role="button" aria-label="View details for ${faction.name}">
             <span class="icon">${faction.icon}</span>
+            ${faction.tvSeries ? '<span class="tv-badge">TV SERIES</span>' : ''}
             <h2>${faction.name}</h2>
             <p class="tagline">"${faction.tagline}"</p>
             <div class="game-tags">
@@ -138,6 +139,24 @@ function showFactionDetail(factionId) {
                 ${faction.games.map(game => `<span class="game-badge">${game}</span>`).join('')}
             </div>
         </div>
+
+        ${faction.tvSeries ? `
+        <div class="detail-section tv-section">
+            <h3>> PRIME VIDEO TV SERIES</h3>
+            <div class="tv-seasons">
+                ${faction.tvSeries.seasons.map(s => `<span class="season-badge">Season ${s}</span>`).join('')}
+            </div>
+            <p>${faction.tvSeries.description}</p>
+            ${faction.tvSeries.keyCharacters && faction.tvSeries.keyCharacters.length > 0 ? `
+            <div class="tv-characters">
+                <strong>Key Characters:</strong>
+                <div class="notable-members">
+                    ${faction.tvSeries.keyCharacters.map(char => `<span class="member-tag tv-character">${char}</span>`).join('')}
+                </div>
+            </div>
+            ` : ''}
+        </div>
+        ` : ''}
     `;
 
     factionDetail.classList.add('active');

@@ -8,12 +8,18 @@ const factions = [
         history: 'Founded in 2077 at Mariposa Military Base in California, the Brotherhood emerged when Captain Roger Maxson led a mutiny after discovering the horrific FEV experiments being conducted on military prisoners. After the bombs fell, they trekked to Lost Hills bunker, establishing the foundations of the Brotherhood. Over the centuries, they spread across the wasteland, with chapters forming in the Midwest, East Coast, and Mojave.',
         ideology: 'The Brotherhood believes in preserving technology and preventing its misuse by those they deem unworthy. They collect, study, and hoard pre-war tech, particularly weapons. While some chapters focus on protecting wastelanders, others prioritize their mission above all else, refusing to share technology with outsiders.',
         headquarters: ['Lost Hills (West Coast)', 'The Citadel (East Coast)', 'The Prydwen (Mobile)', 'Hidden Valley (Mojave)'],
-        notableMembers: ['Elder Maxson', 'Paladin Danse', 'Elder Lyons', 'Scribe Rothchild', 'Veronica Santangelo', 'Christine Royce'],
+        notableMembers: ['Elder Maxson', 'Paladin Danse', 'Elder Lyons', 'Scribe Rothchild', 'Veronica Santangelo', 'Christine Royce', 'Maximus (TV Series)', 'Knight Titus (TV Series)'],
         games: ['Fallout 1', 'Fallout 2', 'Fallout 3', 'Fallout New Vegas', 'Fallout 4', 'Fallout 76'],
         alignment: 'Variable',
         alignmentClass: 'alignment-neutral',
         strengths: ['Advanced technology', 'Power Armor expertise', 'Military discipline', 'Vertibird fleet'],
-        weaknesses: ['Isolationist tendencies', 'Limited recruitment', 'Resource-intensive operations', 'Internal divisions']
+        weaknesses: ['Isolationist tendencies', 'Limited recruitment', 'Resource-intensive operations', 'Internal divisions'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'The Brotherhood plays a major role in the Prime Video series. Maximus (played by Aaron Moten) begins as a Squire and rises through the ranks after assuming the identity of the fallen Knight Titus. The Brotherhood operates with a cult-like hierarchy, with Knights wearing Power Armor. By the end of Season 1, Maximus is promoted to Knight after the battle at Griffith Observatory and is credited with acquiring cold fusion technology for the Brotherhood.',
+            keyCharacters: ['Maximus (Aaron Moten)', 'Knight Titus', 'Dane']
+        }
     },
     {
         id: 'ncr',
@@ -23,13 +29,19 @@ const factions = [
         description: 'The New California Republic is a democratic federation modeling itself after the pre-war United States. Founded in the town of Shady Sands, it has grown to become one of the largest and most organized civilizations in the post-apocalyptic world, spanning much of California and beyond.',
         history: 'The NCR was founded in 2189, emerging from the small community of Shady Sands that was established by Vault 15 dwellers. Under the leadership of Aradesh and later his daughter Tandi (who served as president for 52 years), the NCR grew from a small town into a sprawling nation. By the events of Fallout: New Vegas, it boasts a population of over 700,000 citizens.',
         ideology: 'The NCR promotes democratic values, individual rights, and rule of law. They seek to bring civilization, order, and safety to the wasteland through expansion and integration of settlements. However, their rapid growth has led to bureaucratic inefficiency, corruption, and imperialistic tendencies.',
-        headquarters: ['Shady Sands (Capital)', 'The Hub', 'Camp McCarran', 'Hoover Dam'],
-        notableMembers: ['President Tandi', 'President Kimball', 'General Oliver', 'Chief Hanlon', 'Colonel Hsu', 'Ranger Ghost'],
+        headquarters: ['Shady Sands (Capital - Destroyed)', 'The Hub', 'Camp McCarran', 'Hoover Dam', 'Griffith Observatory (TV Series)'],
+        notableMembers: ['President Tandi', 'President Kimball', 'General Oliver', 'Chief Hanlon', 'Colonel Hsu', 'Ranger Ghost', 'Lee Moldaver (TV Series)'],
         games: ['Fallout 2', 'Fallout New Vegas'],
         alignment: 'Lawful Neutral',
         alignmentClass: 'alignment-neutral',
         strengths: ['Large population', 'Industrial capacity', 'Democratic legitimacy', 'Trained military', 'NCR Rangers'],
-        weaknesses: ['Overextension', 'Bureaucracy', 'Corruption', 'Supply line issues', 'Political infighting']
+        weaknesses: ['Overextension', 'Bureaucracy', 'Corruption', 'Supply line issues', 'Political infighting'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'The TV series reveals a devastating canonical event: sometime after the events of Fallout: New Vegas (2281), Shady Sands was destroyed by a nuclear bomb dropped by Vault 33 Overseer Hank MacLean. This occurred because his wife Rose and children fled to live there with Lee Moldaver. By 2296, the NCR is greatly diminished and led by Moldaver from the Griffith Observatory. The Fall of Shady Sands caused significant controversy among fans regarding the timeline.',
+            keyCharacters: ['Lee Moldaver (Frances Turner)', 'Rose MacLean', 'NCR Soldiers']
+        }
     },
     {
         id: 'caesars-legion',
@@ -45,7 +57,13 @@ const factions = [
         alignment: 'Lawful Evil',
         alignmentClass: 'alignment-hostile',
         strengths: ['Fanatical loyalty', 'Brutal discipline', 'Large slave army', 'No supply chain dependency', 'Effective intelligence network'],
-        weaknesses: ['Cult of personality', 'No succession plan', 'Technological regression', 'Treatment of women limits workforce', 'Unsustainable expansion']
+        weaknesses: ['Cult of personality', 'No succession plan', 'Technological regression', 'Treatment of women limits workforce', 'Unsustainable expansion'],
+        tvSeries: {
+            appears: true,
+            seasons: [2],
+            description: "Caesar's Legion makes their TV series debut in Season 2, which takes place in and around New Vegas. As one of the three major factions vying for control of New Vegas and the Hoover Dam in the games, they appear as antagonists in the show. The Legion remains one of the most brutal and controversial factions in the Fallout universe, and their presence suggests the show will explore the power struggle over the Mojave.",
+            keyCharacters: ['Legion Soldiers']
+        }
     },
     {
         id: 'institute',
@@ -104,12 +122,18 @@ const factions = [
         history: 'The Enclave formed from members of the pre-war shadow government who retreated to the Poseidon Oil Rig before the bombs fell. For over a century, they planned their return, developing advanced technology and plotting to "purify" America of all mutated life - including most wastelanders. Their oil rig was destroyed by the Chosen One in 2242, and their East Coast remnants were defeated by the Brotherhood in 2277.',
         ideology: 'The Enclave believes that radiation and FEV have corrupted all surface dwellers, making them "mutants" unfit to inherit America. Only those with "pure" pre-war lineage deserve to survive. They planned to release modified FEV to kill all mutated life, allowing them to repopulate the continent.',
         headquarters: ['Poseidon Oil Rig (Destroyed)', 'Raven Rock (Destroyed)', 'Control Station ENCLAVE', 'Various bunkers'],
-        notableMembers: ['President Richardson', 'President Eden', 'Colonel Autumn', 'Frank Horrigan', 'Sergeant Dornan'],
+        notableMembers: ['President Richardson', 'President Eden', 'Colonel Autumn', 'Frank Horrigan', 'Sergeant Dornan', 'Dr. Siggi Wilzig (TV Series)'],
         games: ['Fallout 2', 'Fallout 3', 'Fallout 76'],
         alignment: 'Lawful Evil',
         alignmentClass: 'alignment-hostile',
         strengths: ['Most advanced technology', 'Power Armor superiority', 'Vertibird fleet', 'Military training', 'Pre-war resources'],
-        weaknesses: ['Extremely limited numbers', 'Genocidal goals alienate allies', 'No recruitment pool', 'Multiple major defeats', 'Scattered remnants']
+        weaknesses: ['Extremely limited numbers', 'Genocidal goals alienate allies', 'No recruitment pool', 'Multiple major defeats', 'Scattered remnants'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'The Enclave appears briefly in Season 1, confirming they still exist in some form by 2296. Dr. Siggi Wilzig (played by Michael Emerson) is an Enclave scientist who escapes from a secret facility with valuable cold fusion technology stored in his head. Wilzig becomes disillusioned with the Enclave\'s unethical experiments on living beings, including super mutants and dogs, leading to his defection. The TV series hints that The Enclave will play a larger role in future seasons.',
+            keyCharacters: ['Dr. Siggi Wilzig (Michael Emerson)', 'CX404 (Dogmeat)']
+        }
     },
     {
         id: 'followers-of-apocalypse',
@@ -141,7 +165,57 @@ const factions = [
         alignment: 'Variable',
         alignmentClass: 'alignment-neutral',
         strengths: ['Superhuman strength', 'Radiation immunity', 'Disease resistance', 'Long lifespan', 'Intimidating presence'],
-        weaknesses: ['Sterility', 'Mental degradation (many)', 'Feared and hated', 'No recruitment (requires FEV)', 'Internal conflicts']
+        weaknesses: ['Sterility', 'Mental degradation (many)', 'Feared and hated', 'No recruitment (requires FEV)', 'Internal conflicts'],
+        tvSeries: {
+            appears: true,
+            seasons: [1],
+            description: 'Super Mutants appear in the TV series, primarily shown as subjects of Enclave experimentation. Dr. Siggi Wilzig\'s disgust at the Enclave\'s experiments on Super Mutants and other living beings is part of what drives his defection. They serve as a reminder of the wasteland\'s dangers and the unethical experiments various factions conduct.',
+            keyCharacters: ['Various Super Mutants']
+        }
+    },
+    {
+        id: 'ghouls',
+        name: 'Ghouls',
+        icon: '☠️',
+        tagline: 'Smoothskin...',
+        description: 'Ghouls are humans who were exposed to massive amounts of radiation but instead of dying, underwent ghoulification - a mutation that grants extreme longevity and radiation immunity at the cost of gradual physical decay. While not a unified faction, ghouls share common experiences of discrimination and survival.',
+        history: 'Ghouls emerged after the Great War when humans exposed to radiation mutated rather than died. Some ghouls have lived for over 200 years, retaining their memories and personalities from before the war. However, many ghouls eventually go "feral," losing their minds and becoming aggressive. Non-feral ghouls face discrimination from humans who fear or hate them.',
+        ideology: 'Ghouls have no unified ideology - they are simply mutated humans trying to survive. Some integrate into human society, others form ghoul-only communities like Underworld in DC or Necropolis. Many pre-war ghouls struggle with memories of the old world and watching everyone they knew die.',
+        headquarters: ['Underworld (DC)', 'Necropolis (Destroyed)', 'Goodneighbor (Commonwealth)', 'Various settlements'],
+        notableMembers: ['The Ghoul/Cooper Howard (TV Series)', 'Hancock', 'Raul Tejada', 'Dean Domino', 'Eddie Winter', 'Desmond Lockheart', 'Set'],
+        games: ['Fallout 1', 'Fallout 2', 'Fallout 3', 'Fallout New Vegas', 'Fallout 4', 'Fallout 76'],
+        alignment: 'Variable',
+        alignmentClass: 'alignment-neutral',
+        strengths: ['Extreme longevity', 'Radiation immunity', 'Radiation healing', 'Pre-war knowledge (some)', 'Underestimated'],
+        weaknesses: ['Social discrimination', 'Risk of going feral', 'Physical deterioration', 'Need special medicine', 'Feared by humans'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'The Ghoul, born Cooper Howard (played by Walton Goggins), is one of the three main protagonists of the TV series. Once a famous Hollywood actor and Vault-Tec spokesman before the war, Cooper was transformed into a ghoul after the bombs fell and has spent over 200 years as a ruthless bounty hunter. The series explores his tragic backstory through flashbacks, showing his happy pre-war life with his wife Barb (a Vault-Tec executive) and daughter Janey. He must regularly take medicine to prevent going feral. Goggins received an Emmy nomination for Outstanding Lead Actor for his performance.',
+            keyCharacters: ['The Ghoul/Cooper Howard (Walton Goggins)', 'Various Feral Ghouls']
+        }
+    },
+    {
+        id: 'vault-dwellers',
+        name: 'Vault Dwellers',
+        icon: '🔵',
+        tagline: 'Okey Dokey!',
+        description: 'Vault Dwellers are the inhabitants of Vault-Tec\'s underground fallout shelters. Having lived in isolation for generations, most Vault Dwellers are naive about the dangers of the wasteland but often prove resourceful when forced to venture outside. Many legendary wastelanders began as Vault Dwellers.',
+        history: 'When the bombs fell in 2077, those fortunate (or unfortunate) enough to be selected entered the Vaults. For over 200 years, Vault Dwellers lived in their sealed underground communities, following the Overseer\'s rules and believing they would one day reclaim the surface. The reality was that most Vaults were cruel experiments, and those who emerged often found the wasteland very different from what they expected.',
+        ideology: 'Vault Dwellers are typically taught to believe in order, community, and the eventual reclamation of America. They often cling to pre-war values and are shocked by the wasteland\'s brutality. The "Golden Rule" - treating others as you wish to be treated - is emphasized in many Vaults, though this naivety can be dangerous.',
+        headquarters: ['Various Vaults across America', 'Vault 33 (TV Series)', 'Vault 13', 'Vault 101', 'Vault 111'],
+        notableMembers: ['The Vault Dweller (Fallout 1)', 'The Chosen One (Fallout 2)', 'The Lone Wanderer (Fallout 3)', 'The Sole Survivor (Fallout 4)', 'Lucy MacLean (TV Series)', 'Norm MacLean (TV Series)'],
+        games: ['Fallout 1', 'Fallout 2', 'Fallout 3', 'Fallout 4', 'Fallout 76'],
+        alignment: 'Variable',
+        alignmentClass: 'alignment-neutral',
+        strengths: ['Education', 'Technical skills', 'Community bonds', 'Pre-war knowledge', 'Adaptability'],
+        weaknesses: ['Naive about wasteland', 'Sheltered upbringing', 'Culture shock', 'May not know survival skills', 'Trust too easily'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'Lucy MacLean (played by Ella Purnell), the show\'s main protagonist, is a Vault Dweller from Vault 33 in the Los Angeles area. When raiders attack her Vault and kidnap her father Hank (the Overseer), she ventures into the wasteland for the first time. Lucy embodies the classic Vault Dweller traits - optimistic, believing in the Golden Rule, and shocked by the wasteland\'s brutality. Her brother Norm remains in the Vault and uncovers the dark truth about Vaults 31-33. The series shows how Lucy\'s idealism is tested and changed by her experiences.',
+            keyCharacters: ['Lucy MacLean (Ella Purnell)', 'Norm MacLean (Moisés Arias)', 'Hank MacLean (Kyle MacLachlan)', 'Various Vault 33 residents']
+        }
     },
     {
         id: 'raiders',
@@ -157,7 +231,13 @@ const factions = [
         alignment: 'Chaotic Evil',
         alignmentClass: 'alignment-hostile',
         strengths: ['Numerous', 'No rules of engagement', 'Unpredictable', 'Know the territory', 'Desperate fighters'],
-        weaknesses: ['Disorganized', 'No supply lines', 'Chem addiction', 'Constant infighting', 'Everyone hates them']
+        weaknesses: ['Disorganized', 'No supply lines', 'Chem addiction', 'Constant infighting', 'Everyone hates them'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'Raiders play a significant role in the TV series. The inciting incident of Season 1 occurs when raiders attack Vault 33, killing many residents and kidnapping Overseer Hank MacLean. These raiders are revealed to be working with Lee Moldaver and the remnants of the NCR. Throughout the series, various raider groups are encountered in the wasteland, showcasing the brutal reality of post-apocalyptic survival.',
+            keyCharacters: ['Various Raider gangs']
+        }
     },
     {
         id: 'vault-tec',
@@ -167,13 +247,19 @@ const factions = [
         description: 'Vault-Tec Corporation was the pre-war company contracted to build the Vault system that would shelter Americans from nuclear war. In truth, most Vaults were designed as unethical social experiments, with Vault-Tec using the apocalypse as an opportunity for twisted research.',
         history: 'Founded before the Great War, Vault-Tec received government contracts to build 122 Vaults across America. While marketed as survival shelters, the real purpose was to conduct experiments on isolated populations - testing everything from overcrowding to cloning to total dictatorial control. The company\'s leadership had access to their own private Vault.',
         ideology: 'Vault-Tec\'s true ideology was the pursuit of knowledge regardless of ethics, funded by disaster capitalism. They knowingly built faulty Vaults, subjected thousands to horrific experiments, and may have even played a role in starting the Great War. Some researchers believed they were helping humanity; leadership just wanted data.',
-        headquarters: ['Vault-Tec HQ (Various locations)', 'Secret Vault', 'Control Vaults'],
-        notableMembers: ['Vault-Tec Rep', 'Stanislaus Braun', 'Various Overseers', 'The Board'],
+        headquarters: ['Vault-Tec HQ (Various locations)', 'Secret Vault', 'Control Vaults', 'Vaults 31, 32, 33 (TV Series)'],
+        notableMembers: ['Vault-Tec Rep', 'Stanislaus Braun', 'Various Overseers', 'The Board', 'Barb Howard (TV Series)', 'Bud Askins (TV Series)', 'Hank MacLean (TV Series)'],
         games: ['Fallout 1', 'Fallout 2', 'Fallout 3', 'Fallout New Vegas', 'Fallout 4', 'Fallout 76'],
         alignment: 'Lawful Evil',
         alignmentClass: 'alignment-hostile',
         strengths: ['Pre-war resources', 'Advanced technology', 'Vault network', 'Extensive data', 'Government backing'],
-        weaknesses: ['Company effectively dissolved', 'Experiments often failed', 'No post-war presence', 'Universally reviled', 'Vaults mostly failed']
+        weaknesses: ['Company effectively dissolved', 'Experiments often failed', 'No post-war presence', 'Universally reviled', 'Vaults mostly failed'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'Vault-Tec is central to the TV series plot. Through flashbacks, we see Cooper Howard\'s wife Barb Howard was a Vault-Tec executive who attended a secret meeting where corporate moguls planned to use Vaults for social experiments. Most shockingly, it\'s revealed that Vault-Tec may have started the Great War themselves when Barb suggested they should "take the first step" since their plans required nuclear apocalypse. The series also reveals Vaults 31-33 were interconnected experiments, with Vault 31 containing cryogenically frozen Vault-Tec executives (including Hank MacLean) who would emerge to lead the other Vaults.',
+            keyCharacters: ['Barb Howard (Frances Turner)', 'Bud Askins', 'Hank MacLean (Kyle MacLachlan)', 'Lucy MacLean (Ella Purnell)', 'Norm MacLean']
+        }
     },
     {
         id: 'mr-house',
@@ -189,7 +275,13 @@ const factions = [
         alignment: 'Lawful Neutral',
         alignmentClass: 'alignment-neutral',
         strengths: ['Genius intellect', 'Securitron army', 'Economic control', 'Pre-war technology', 'Long-term planning'],
-        weaknesses: ['Physically helpless', 'Dependent on technology', 'Single point of failure', 'Emotionally detached', 'Underestimates others']
+        weaknesses: ['Physically helpless', 'Dependent on technology', 'Single point of failure', 'Emotionally detached', 'Underestimates others'],
+        tvSeries: {
+            appears: true,
+            seasons: [1, 2],
+            description: 'Mr. House appears briefly in Season 1 flashbacks as one of the corporate executives at the secret Vault-Tec meeting where they discussed using Vaults for experiments. In Season 2, he takes center stage as the show moves to New Vegas. Justin Theroux portrays House, and the teaser trailer shows a near-perfect replica of his Lucky 38 penthouse headquarters with House himself active and operational. At the end of Season 1, Lucy, The Ghoul, and CX404 are seen heading toward New Vegas to find Hank MacLean.',
+            keyCharacters: ['Mr. House (Justin Theroux)']
+        }
     },
     {
         id: 'gunners',

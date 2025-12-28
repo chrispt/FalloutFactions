@@ -371,3 +371,82 @@ footer {
     40% { content: '..'; }
     60%, 100% { content: '...'; }
 }
+
+/* TV Series Styles */
+.tv-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e50914;
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.faction-card {
+    position: relative;
+}
+
+.tv-section {
+    background: linear-gradient(135deg, rgba(229, 9, 20, 0.1), transparent);
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.tv-section h3 {
+    color: #e50914 !important;
+}
+
+.tv-seasons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.season-badge {
+    background: #e50914;
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.tv-characters {
+    margin-top: 15px;
+}
+
+.tv-characters strong {
+    color: var(--amber);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tv-character {
+    border-color: rgba(229, 9, 20, 0.5) !important;
+}
+
+/* Copyright/Legal Section */
+.legal-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--pip-green-dark);
+    font-size: 0.75rem;
+    color: var(--pip-green-dark);
+    line-height: 1.6;
+}
+
+.legal-section p {
+    margin-bottom: 10px;
+}
+
+.legal-section a {
+    color: var(--pip-green);
+    text-decoration: none;
+}
+
+.legal-section a:hover {
+    text-decoration: underline;
+}
