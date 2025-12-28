@@ -122,6 +122,17 @@ header h1 {
     display: block;
 }
 
+.faction-card .faction-svg {
+    width: 60px;
+    height: 60px;
+    color: var(--pip-green);
+    margin-bottom: 15px;
+}
+
+.faction-card:hover .faction-svg {
+    filter: drop-shadow(0 0 8px var(--pip-green));
+}
+
 .faction-card h2 {
     font-size: 1.3rem;
     margin-bottom: 10px;
@@ -209,6 +220,14 @@ header h1 {
     font-size: 5rem;
     margin-bottom: 20px;
     display: block;
+}
+
+.detail-header .faction-svg {
+    width: 100px;
+    height: 100px;
+    color: var(--pip-green);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--pip-green-glow));
 }
 
 .detail-header h2 {
@@ -426,6 +445,38 @@ footer {
 
 .tv-character {
     border-color: rgba(229, 9, 20, 0.5) !important;
+}
+
+/* Wikipedia Link */
+.wiki-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: transparent;
+    border: 1px solid var(--pip-green);
+    color: var(--pip-green);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.wiki-link:hover {
+    background: var(--pip-green);
+    color: var(--terminal-bg);
+}
+
+.wiki-link::before {
+    content: '📖 ';
+}
+
+.tv-wiki-link {
+    border-color: #e50914;
+    color: #e50914;
+}
+
+.tv-wiki-link:hover {
+    background: #e50914;
+    color: white;
 }
 
 /* Copyright/Legal Section */

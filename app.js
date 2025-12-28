@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderFactions() {
     factionsGrid.innerHTML = factions.map(faction => `
         <article class="faction-card" data-faction-id="${faction.id}" tabindex="0" role="button" aria-label="View details for ${faction.name}">
-            <span class="icon">${faction.icon}</span>
+            <div class="icon">${getFactionIcon(faction.id)}</div>
             ${faction.tvSeries ? '<span class="tv-badge">TV SERIES</span>' : ''}
             <h2>${faction.name}</h2>
             <p class="tagline">"${faction.tagline}"</p>
@@ -74,9 +74,10 @@ function showFactionDetail(factionId) {
 
     detailContent.innerHTML = `
         <div class="detail-header">
-            <span class="icon">${faction.icon}</span>
+            <div class="icon">${getFactionIcon(faction.id)}</div>
             <h2>${faction.name}</h2>
             <p class="tagline">"${faction.tagline}"</p>
+            ${faction.wikipedia ? `<a href="${faction.wikipedia}" target="_blank" rel="noopener noreferrer" class="wiki-link">View on Wikipedia</a>` : ''}
         </div>
 
         <div class="info-grid">
@@ -155,6 +156,7 @@ function showFactionDetail(factionId) {
                 </div>
             </div>
             ` : ''}
+            <a href="https://en.wikipedia.org/wiki/Fallout_(American_TV_series)" target="_blank" rel="noopener noreferrer" class="wiki-link tv-wiki-link">Fallout TV Series on Wikipedia</a>
         </div>
         ` : ''}
     `;
