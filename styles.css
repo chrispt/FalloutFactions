@@ -77,6 +77,162 @@ header h1 {
     96% { opacity: 1; }
 }
 
+/* Faction Map */
+.faction-map {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid var(--pip-green-dark);
+    background: var(--terminal-bg-light);
+}
+
+.map-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--pip-green);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--pip-green-glow);
+}
+
+.map-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.usa-map {
+    flex: 1;
+    max-width: 800px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--pip-green-dark);
+}
+
+.usa-outline {
+    fill: none;
+    stroke: var(--pip-green-dark);
+    stroke-width: 2;
+}
+
+.state-lines line {
+    stroke: var(--pip-green-dark);
+    stroke-width: 0.5;
+    stroke-dasharray: 5, 5;
+    opacity: 0.3;
+}
+
+.region-labels .region-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    fill: var(--pip-green-dark);
+    opacity: 0.5;
+}
+
+.faction-marker {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faction-marker circle {
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.faction-marker:hover circle {
+    r: 12;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+.faction-marker text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    fill: var(--pip-green);
+    pointer-events: none;
+}
+
+.marker-tooltip {
+    position: absolute;
+    background: var(--terminal-bg);
+    border: 1px solid var(--pip-green);
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    color: var(--pip-green);
+    pointer-events: none;
+    z-index: 100;
+    white-space: nowrap;
+    box-shadow: 0 0 10px var(--pip-green-glow);
+}
+
+.map-legend {
+    min-width: 200px;
+    max-width: 250px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--pip-green-dark);
+    padding: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.map-legend h3 {
+    font-size: 1rem;
+    color: var(--amber);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--pip-green-dark);
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background 0.3s ease;
+    font-size: 0.75rem;
+}
+
+.legend-item:hover {
+    background: rgba(20, 255, 0, 0.1);
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legend-name {
+    color: var(--pip-green);
+}
+
+.map-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--pip-green-dark);
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        flex-direction: column;
+    }
+
+    .map-legend {
+        max-width: 100%;
+        max-height: 200px;
+    }
+
+    .usa-map {
+        max-width: 100%;
+    }
+}
+
 /* Factions Grid */
 .factions-grid {
     display: grid;
