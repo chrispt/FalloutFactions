@@ -6,35 +6,42 @@ const closeBtn = document.getElementById('close-btn');
 const factionMarkers = document.getElementById('faction-markers');
 const legendItems = document.getElementById('legend-items');
 
-// Faction location data (approximate positions on stylized USA map)
+// Faction location data (positions based on actual US state map)
+// California (CA): West Coast factions - Lost Hills, Boneyard (LA)
+// Nevada (NV): New Vegas, Mojave factions
+// Arizona (AZ): Caesar's Legion
+// Massachusetts (MA): Commonwealth factions - Boston area
+// Washington DC area (MD/VA): Capital Wasteland
+// West Virginia (WV): Appalachia
+// Maine (ME): Far Harbor
 const factionLocations = {
-    'brotherhood-of-steel': { x: 170, y: 320, region: 'West Coast', color: '#4a90d9' },
-    'ncr': { x: 150, y: 350, region: 'West Coast', color: '#c9a227' },
-    'caesars-legion': { x: 320, y: 380, region: 'Arizona', color: '#8b0000' },
-    'institute': { x: 820, y: 175, region: 'Commonwealth', color: '#00ffff' },
-    'railroad': { x: 830, y: 185, region: 'Commonwealth', color: '#ff6b6b' },
-    'minutemen': { x: 810, y: 195, region: 'Commonwealth', color: '#4169e1' },
-    'enclave': { x: 740, y: 260, region: 'Capital Wasteland', color: '#1a1a8c' },
-    'followers-of-apocalypse': { x: 160, y: 370, region: 'West Coast', color: '#ff69b4' },
-    'super-mutants': { x: 180, y: 340, region: 'West Coast', color: '#228b22' },
-    'ghouls': { x: 190, y: 360, region: 'Various', color: '#8b4513' },
-    'vault-dwellers': { x: 200, y: 330, region: 'Various', color: '#0066cc' },
-    'raiders': { x: 550, y: 300, region: 'Various', color: '#800000' },
-    'vault-tec': { x: 730, y: 250, region: 'Capital Wasteland', color: '#ffd700' },
-    'mr-house': { x: 280, y: 370, region: 'New Vegas', color: '#c0c0c0' },
-    'gunners': { x: 840, y: 170, region: 'Commonwealth', color: '#556b2f' },
-    'children-of-atom': { x: 850, y: 160, region: 'Commonwealth', color: '#32cd32' },
-    'great-khans': { x: 260, y: 350, region: 'Mojave', color: '#daa520' },
-    'boomers': { x: 290, y: 360, region: 'Mojave', color: '#ff4500' },
-    'responders': { x: 700, y: 320, region: 'Appalachia', color: '#dc143c' },
-    'free-states': { x: 710, y: 340, region: 'Appalachia', color: '#2e8b57' },
-    'disciples-of-atom': { x: 825, y: 205, region: 'Nuka-World', color: '#9932cc' },
-    'operators': { x: 835, y: 195, region: 'Nuka-World', color: '#b8860b' },
-    'the-pack': { x: 815, y: 210, region: 'Nuka-World', color: '#ff1493' },
-    'trappers': { x: 860, y: 140, region: 'Far Harbor', color: '#696969' },
-    'harbormen': { x: 870, y: 130, region: 'Far Harbor', color: '#4682b4' },
-    'acadia': { x: 865, y: 135, region: 'Far Harbor', color: '#9370db' },
-    'atom-cats': { x: 845, y: 180, region: 'Commonwealth', color: '#ff8c00' }
+    'brotherhood-of-steel': { x: 145, y: 260, region: 'California (Lost Hills)', color: '#4a90d9' },
+    'ncr': { x: 130, y: 290, region: 'California (Shady Sands)', color: '#c9a227' },
+    'caesars-legion': { x: 240, y: 340, region: 'Arizona (Flagstaff)', color: '#8b0000' },
+    'institute': { x: 878, y: 118, region: 'Massachusetts (Boston)', color: '#00ffff' },
+    'railroad': { x: 885, y: 125, region: 'Massachusetts (Boston)', color: '#ff6b6b' },
+    'minutemen': { x: 870, y: 125, region: 'Massachusetts (The Castle)', color: '#4169e1' },
+    'enclave': { x: 795, y: 230, region: 'DC Area (Raven Rock)', color: '#1a1a8c' },
+    'followers-of-apocalypse': { x: 125, y: 320, region: 'California (LA Boneyard)', color: '#ff69b4' },
+    'super-mutants': { x: 140, y: 275, region: 'California (Mariposa)', color: '#228b22' },
+    'ghouls': { x: 155, y: 305, region: 'California (Necropolis)', color: '#8b4513' },
+    'vault-dwellers': { x: 145, y: 245, region: 'California (Vault 13)', color: '#0066cc' },
+    'raiders': { x: 480, y: 250, region: 'Various (Midwest)', color: '#800000' },
+    'vault-tec': { x: 810, y: 225, region: 'DC Area', color: '#ffd700' },
+    'mr-house': { x: 200, y: 230, region: 'Nevada (New Vegas)', color: '#c0c0c0' },
+    'gunners': { x: 862, y: 132, region: 'Massachusetts', color: '#556b2f' },
+    'children-of-atom': { x: 895, y: 55, region: 'Maine (Far Harbor)', color: '#32cd32' },
+    'great-khans': { x: 210, y: 245, region: 'Nevada (Red Rock)', color: '#daa520' },
+    'boomers': { x: 195, y: 215, region: 'Nevada (Nellis AFB)', color: '#ff4500' },
+    'responders': { x: 730, y: 195, region: 'West Virginia', color: '#dc143c' },
+    'free-states': { x: 745, y: 185, region: 'West Virginia (Harpers Ferry)', color: '#2e8b57' },
+    'disciples-of-atom': { x: 855, y: 140, region: 'Massachusetts (Nuka-World)', color: '#9932cc' },
+    'operators': { x: 848, y: 148, region: 'Massachusetts (Nuka-World)', color: '#b8860b' },
+    'the-pack': { x: 862, y: 145, region: 'Massachusetts (Nuka-World)', color: '#ff1493' },
+    'trappers': { x: 905, y: 45, region: 'Maine (The Island)', color: '#696969' },
+    'harbormen': { x: 912, y: 55, region: 'Maine (Far Harbor)', color: '#4682b4' },
+    'acadia': { x: 900, y: 60, region: 'Maine (Mount Desert)', color: '#9370db' },
+    'atom-cats': { x: 875, y: 135, region: 'Massachusetts (South Boston)', color: '#ff8c00' }
 };
 
 // Initialize the application

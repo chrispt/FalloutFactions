@@ -20,29 +20,167 @@
                 <h2 class="map-title">// FACTION TERRITORY MAP //</h2>
                 <div class="map-container">
                     <svg viewBox="0 0 960 600" class="usa-map" id="usa-map">
-                        <!-- Simplified USA outline -->
-                        <path class="usa-outline" d="M158 130 L240 125 L280 130 L310 125 L340 135 L380 130 L420 128 L460 130 L500 125 L540 130 L580 125 L620 130 L660 135 L700 130 L740 140 L780 145 L820 160 L850 180 L870 200 L880 230 L885 260 L880 290 L870 320 L850 350 L830 380 L800 400 L770 420 L740 435 L700 445 L660 450 L620 455 L580 450 L540 455 L500 450 L460 455 L420 450 L380 455 L340 450 L300 460 L260 470 L220 480 L180 485 L140 475 L110 460 L85 440 L70 410 L60 380 L55 340 L60 300 L70 260 L85 220 L100 190 L120 160 L140 140 Z"/>
-
-                        <!-- State divider lines (simplified) -->
-                        <g class="state-lines">
-                            <line x1="200" y1="130" x2="200" y2="380"/>
-                            <line x1="280" y1="130" x2="280" y2="420"/>
-                            <line x1="360" y1="130" x2="360" y2="450"/>
-                            <line x1="440" y1="130" x2="440" y2="450"/>
-                            <line x1="520" y1="130" x2="520" y2="455"/>
-                            <line x1="600" y1="130" x2="600" y2="455"/>
-                            <line x1="680" y1="130" x2="680" y2="450"/>
-                            <line x1="760" y1="145" x2="760" y2="430"/>
+                        <!-- US States -->
+                        <g class="states">
+                            <!-- Washington -->
+                            <path class="state" data-state="WA" d="M108,55 L118,55 L125,52 L140,52 L158,56 L175,54 L178,58 L178,95 L168,95 L165,105 L108,105 L108,55 Z"/>
+                            <!-- Oregon -->
+                            <path class="state" data-state="OR" d="M108,105 L165,105 L168,95 L178,95 L178,115 L182,135 L182,165 L108,165 L108,105 Z"/>
+                            <!-- California -->
+                            <path class="state" data-state="CA" d="M108,165 L182,165 L182,195 L178,225 L165,265 L155,295 L140,330 L125,355 L108,355 L108,165 Z"/>
+                            <!-- Nevada -->
+                            <path class="state" data-state="NV" d="M182,165 L220,165 L220,295 L155,295 L165,265 L178,225 L182,195 L182,165 Z"/>
+                            <!-- Idaho -->
+                            <path class="state" data-state="ID" d="M178,58 L210,58 L215,75 L220,95 L220,165 L182,165 L182,135 L178,115 L178,95 L178,58 Z"/>
+                            <!-- Montana -->
+                            <path class="state" data-state="MT" d="M210,58 L320,58 L320,115 L220,115 L220,95 L215,75 L210,58 Z"/>
+                            <!-- Wyoming -->
+                            <path class="state" data-state="WY" d="M220,115 L320,115 L320,185 L220,185 L220,115 Z"/>
+                            <!-- Utah -->
+                            <path class="state" data-state="UT" d="M220,185 L280,185 L280,295 L220,295 L220,185 Z"/>
+                            <!-- Colorado -->
+                            <path class="state" data-state="CO" d="M280,185 L380,185 L380,285 L280,285 L280,185 Z"/>
+                            <!-- Arizona -->
+                            <path class="state" data-state="AZ" d="M155,295 L220,295 L280,295 L280,385 L215,385 L190,395 L155,395 L140,330 L155,295 Z"/>
+                            <!-- New Mexico -->
+                            <path class="state" data-state="NM" d="M280,285 L380,285 L380,395 L280,395 L280,285 Z"/>
+                            <!-- North Dakota -->
+                            <path class="state" data-state="ND" d="M320,58 L420,58 L420,105 L320,105 L320,58 Z"/>
+                            <!-- South Dakota -->
+                            <path class="state" data-state="SD" d="M320,105 L420,105 L420,165 L320,165 L320,105 Z"/>
+                            <!-- Nebraska -->
+                            <path class="state" data-state="NE" d="M320,165 L420,165 L435,185 L435,225 L320,225 L320,165 Z"/>
+                            <!-- Kansas -->
+                            <path class="state" data-state="KS" d="M320,225 L435,225 L435,285 L380,285 L380,285 L320,285 L320,225 Z"/>
+                            <!-- Oklahoma -->
+                            <path class="state" data-state="OK" d="M320,285 L380,285 L435,285 L435,335 L380,335 L380,355 L320,355 L320,285 Z"/>
+                            <!-- Texas -->
+                            <path class="state" data-state="TX" d="M280,395 L380,395 L380,355 L435,355 L435,335 L435,355 L480,355 L490,385 L485,425 L470,455 L440,485 L400,505 L360,495 L320,465 L290,435 L280,395 Z"/>
+                            <!-- Minnesota -->
+                            <path class="state" data-state="MN" d="M420,58 L500,58 L500,75 L520,75 L520,145 L420,145 L420,58 Z"/>
+                            <!-- Iowa -->
+                            <path class="state" data-state="IA" d="M420,145 L520,145 L530,165 L530,205 L435,205 L435,185 L420,165 L420,145 Z"/>
+                            <!-- Missouri -->
+                            <path class="state" data-state="MO" d="M435,205 L530,205 L545,225 L545,295 L480,295 L480,285 L435,285 L435,205 Z"/>
+                            <!-- Arkansas -->
+                            <path class="state" data-state="AR" d="M480,295 L545,295 L545,355 L480,355 L480,295 Z"/>
+                            <!-- Louisiana -->
+                            <path class="state" data-state="LA" d="M480,355 L545,355 L560,395 L545,420 L510,425 L480,410 L480,355 Z"/>
+                            <!-- Wisconsin -->
+                            <path class="state" data-state="WI" d="M520,75 L560,65 L585,75 L595,95 L595,145 L530,145 L520,145 L520,75 Z"/>
+                            <!-- Illinois -->
+                            <path class="state" data-state="IL" d="M530,145 L595,145 L595,175 L605,205 L595,245 L575,275 L545,275 L545,225 L530,205 L530,145 Z"/>
+                            <!-- Michigan -->
+                            <path class="state" data-state="MI" d="M560,65 L585,55 L610,45 L640,55 L655,75 L660,95 L655,125 L640,135 L620,135 L595,145 L595,95 L585,75 L560,65 Z M570,95 L590,85 L605,95 L600,115 L580,120 L570,110 Z"/>
+                            <!-- Indiana -->
+                            <path class="state" data-state="IN" d="M595,145 L640,145 L640,235 L605,235 L605,205 L595,175 L595,145 Z"/>
+                            <!-- Ohio -->
+                            <path class="state" data-state="OH" d="M640,135 L700,125 L710,145 L710,215 L680,235 L640,235 L640,145 L640,135 Z"/>
+                            <!-- Kentucky -->
+                            <path class="state" data-state="KY" d="M575,275 L595,245 L605,235 L640,235 L680,235 L710,215 L730,235 L710,265 L640,285 L575,275 Z"/>
+                            <!-- Tennessee -->
+                            <path class="state" data-state="TN" d="M545,275 L575,275 L640,285 L710,265 L730,275 L730,305 L545,305 L545,275 Z"/>
+                            <!-- Mississippi -->
+                            <path class="state" data-state="MS" d="M545,305 L595,305 L595,395 L560,395 L545,355 L545,305 Z"/>
+                            <!-- Alabama -->
+                            <path class="state" data-state="AL" d="M595,305 L660,305 L660,395 L620,405 L595,395 L595,305 Z"/>
+                            <!-- Georgia -->
+                            <path class="state" data-state="GA" d="M660,305 L730,285 L745,305 L745,375 L710,395 L660,395 L660,305 Z"/>
+                            <!-- Florida -->
+                            <path class="state" data-state="FL" d="M660,395 L710,395 L745,375 L765,395 L775,435 L770,475 L745,505 L715,495 L695,465 L680,430 L660,405 L660,395 Z"/>
+                            <!-- South Carolina -->
+                            <path class="state" data-state="SC" d="M730,285 L775,265 L795,295 L775,325 L745,305 L730,285 Z"/>
+                            <!-- North Carolina -->
+                            <path class="state" data-state="NC" d="M710,265 L730,275 L730,285 L775,265 L820,245 L840,255 L830,275 L775,295 L730,305 L710,265 Z"/>
+                            <!-- Virginia -->
+                            <path class="state" data-state="VA" d="M710,215 L730,235 L710,265 L730,275 L730,285 L775,265 L795,245 L810,225 L780,225 L750,215 L710,215 Z"/>
+                            <!-- West Virginia -->
+                            <path class="state" data-state="WV" d="M710,185 L750,175 L765,195 L780,225 L750,215 L710,215 L710,185 Z"/>
+                            <!-- Maryland -->
+                            <path class="state" data-state="MD" d="M780,225 L810,225 L830,215 L830,235 L795,245 L780,225 Z"/>
+                            <!-- Delaware -->
+                            <path class="state" data-state="DE" d="M830,215 L845,205 L845,230 L830,235 L830,215 Z"/>
+                            <!-- New Jersey -->
+                            <path class="state" data-state="NJ" d="M830,175 L845,175 L855,195 L845,215 L845,205 L830,215 L825,195 L830,175 Z"/>
+                            <!-- Pennsylvania -->
+                            <path class="state" data-state="PA" d="M710,145 L830,145 L830,175 L825,195 L780,195 L765,195 L750,175 L710,185 L710,145 Z"/>
+                            <!-- New York -->
+                            <path class="state" data-state="NY" d="M710,95 L750,85 L790,75 L830,85 L855,95 L865,115 L855,135 L830,145 L710,145 L710,125 L700,125 L710,95 Z"/>
+                            <!-- Connecticut -->
+                            <path class="state" data-state="CT" d="M855,135 L875,130 L880,145 L865,155 L855,150 L855,135 Z"/>
+                            <!-- Rhode Island -->
+                            <path class="state" data-state="RI" d="M880,130 L890,125 L890,145 L880,145 L880,130 Z"/>
+                            <!-- Massachusetts -->
+                            <path class="state" data-state="MA" d="M855,115 L865,115 L885,105 L905,110 L905,125 L890,125 L880,130 L875,130 L855,135 L855,115 Z"/>
+                            <!-- Vermont -->
+                            <path class="state" data-state="VT" d="M855,75 L865,75 L865,115 L855,115 L855,95 L855,75 Z"/>
+                            <!-- New Hampshire -->
+                            <path class="state" data-state="NH" d="M865,55 L875,55 L880,75 L885,105 L865,115 L865,75 L865,55 Z"/>
+                            <!-- Maine -->
+                            <path class="state" data-state="ME" d="M875,25 L895,20 L915,35 L920,60 L905,80 L885,105 L880,75 L875,55 L875,25 Z"/>
                         </g>
 
-                        <!-- Region labels -->
-                        <g class="region-labels">
-                            <text x="160" y="280" class="region-label">WEST COAST</text>
-                            <text x="400" y="350" class="region-label">MOJAVE</text>
-                            <text x="550" y="280" class="region-label">MIDWEST</text>
-                            <text x="720" y="240" class="region-label">CAPITAL WASTELAND</text>
-                            <text x="800" y="180" class="region-label">COMMONWEALTH</text>
-                            <text x="680" y="380" class="region-label">APPALACHIA</text>
+                        <!-- State labels (abbreviated) -->
+                        <g class="state-labels">
+                            <text x="140" y="82">WA</text>
+                            <text x="140" y="138">OR</text>
+                            <text x="140" y="265">CA</text>
+                            <text x="198" y="235">NV</text>
+                            <text x="195" y="115">ID</text>
+                            <text x="265" y="90">MT</text>
+                            <text x="265" y="155">WY</text>
+                            <text x="245" y="245">UT</text>
+                            <text x="325" y="240">CO</text>
+                            <text x="215" y="345">AZ</text>
+                            <text x="325" y="345">NM</text>
+                            <text x="365" y="82">ND</text>
+                            <text x="365" y="138">SD</text>
+                            <text x="375" y="198">NE</text>
+                            <text x="375" y="258">KS</text>
+                            <text x="375" y="320">OK</text>
+                            <text x="385" y="430">TX</text>
+                            <text x="465" y="105">MN</text>
+                            <text x="475" y="178">IA</text>
+                            <text x="485" y="252">MO</text>
+                            <text x="510" y="328">AR</text>
+                            <text x="515" y="390">LA</text>
+                            <text x="555" y="115">WI</text>
+                            <text x="565" y="210">IL</text>
+                            <text x="595" y="82">MI</text>
+                            <text x="615" y="195">IN</text>
+                            <text x="672" y="180">OH</text>
+                            <text x="640" y="262">KY</text>
+                            <text x="635" y="292">TN</text>
+                            <text x="567" y="352">MS</text>
+                            <text x="625" y="355">AL</text>
+                            <text x="695" y="345">GA</text>
+                            <text x="720" y="445">FL</text>
+                            <text x="755" y="295">SC</text>
+                            <text x="770" y="268">NC</text>
+                            <text x="755" y="238">VA</text>
+                            <text x="730" y="198">WV</text>
+                            <text x="805" y="232">MD</text>
+                            <text x="838" y="222">DE</text>
+                            <text x="842" y="195">NJ</text>
+                            <text x="770" y="168">PA</text>
+                            <text x="780" y="118">NY</text>
+                            <text x="867" y="145">CT</text>
+                            <text x="885" y="138">RI</text>
+                            <text x="878" y="118">MA</text>
+                            <text x="858" y="98">VT</text>
+                            <text x="872" y="82">NH</text>
+                            <text x="892" y="55">ME</text>
+                        </g>
+
+                        <!-- Fallout Region overlays -->
+                        <g class="region-overlays">
+                            <text x="145" y="320" class="region-label">WEST COAST</text>
+                            <text x="225" y="360" class="region-label">MOJAVE</text>
+                            <text x="470" y="145" class="region-label">MIDWEST</text>
+                            <text x="720" y="220" class="region-label">CAPITAL</text>
+                            <text x="715" y="235" class="region-label">WASTELAND</text>
+                            <text x="855" y="98" class="region-label">COMMONWEALTH</text>
+                            <text x="660" y="310" class="region-label">APPALACHIA</text>
                         </g>
 
                         <!-- Faction markers will be added by JavaScript -->

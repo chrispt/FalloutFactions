@@ -107,24 +107,32 @@ header h1 {
     border: 1px solid var(--pip-green-dark);
 }
 
-.usa-outline {
-    fill: none;
+.states .state {
+    fill: rgba(10, 140, 0, 0.1);
     stroke: var(--pip-green-dark);
-    stroke-width: 2;
+    stroke-width: 1;
+    transition: fill 0.3s ease;
 }
 
-.state-lines line {
-    stroke: var(--pip-green-dark);
-    stroke-width: 0.5;
-    stroke-dasharray: 5, 5;
-    opacity: 0.3;
+.states .state:hover {
+    fill: rgba(20, 255, 0, 0.2);
 }
 
-.region-labels .region-label {
+.state-labels text {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     fill: var(--pip-green-dark);
-    opacity: 0.5;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.region-overlays .region-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    fill: var(--amber);
+    opacity: 0.8;
+    font-weight: bold;
+    pointer-events: none;
 }
 
 .faction-marker {
